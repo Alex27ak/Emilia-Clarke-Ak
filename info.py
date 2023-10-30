@@ -21,9 +21,9 @@ BOT_TOKEN = environ.get('BOT_TOKEN', "")
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
-PICS = (environ.get('PICS', 'https://telegra.ph/file/b6181a56ff0221be879ad.jpg')).split() #SAMPLE PIC
+PICS = (environ.get('PICS', 'https://telegra.ph/file/db7600fa0deef5d595c0f.jpg')).split() #SAMPLE PIC
 NOR_IMG = environ.get("NOR_IMG", "https://te.legra.ph/file/a27dc8fe434e6b846b0f8.jpg")
-MELCOW_VID = environ.get("MELCOW_VID", "https://telegra.ph/file/37a6a275d8ba729fe855f.mp4")
+MELCOW_VID = environ.get("MELCOW_VID", "https://telegra.ph/file/73a3842d2477404570f15.mp4")
 SPELL_IMG = environ.get("SPELL_IMG", "https://te.legra.ph/file/15c1ad448dfe472a5cbb8.jpg")
 
 # Admins, Channels & Users
@@ -61,7 +61,7 @@ CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/Aklinksz')
 TUTORIAL = environ.get('TUTORIAL', 'https://t.me/Aklinksz')
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
 MSG_ALRT = environ.get('MSG_ALRT', 'Hello Darlings...❤️')
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001614975178'))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001617815028'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Aklinksz_Support_bot')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
@@ -96,8 +96,8 @@ else:
     ON_HEROKU = False
 BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
 FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
-URL = "https://sunnyleonebot-massalex306.koyeb.app/".format(FQDN) if ON_HEROKU or NO_PORT else \
-    "https://sunnyleonebot-massalex306.koyeb.app/".format(FQDN, PORT)
+URL = "https://parental-dorene-alexpandian1206.koyeb.app/".format(FQDN) if ON_HEROKU or NO_PORT else \
+    "https://parental-dorene-alexpandian1206.koyeb.app/".format(FQDN, PORT)
 SLEEP_THRESHOLD = int(environ.get('SLEEP_THRESHOLD', '60'))
 WORKERS = int(environ.get('WORKERS', '4'))
 SESSION_NAME = str(environ.get('SESSION_NAME', 'LazyBot'))
@@ -112,9 +112,9 @@ else:
     ON_HEROKU = False
 HAS_SSL=bool(getenv('HAS_SSL',False))
 if HAS_SSL:
-    URL = "https://sunnyleonebot-massalex306.koyeb.app/".format(FQDN)
+    URL = "https://parental-dorene-alexpandian1206.koyeb.app/".format(FQDN)
 else:
-    URL = "https://sunnyleonebot-massalex306.koyeb.app/".format(FQDN)
+    URL = "https://parental-dorene-alexpandian1206.koyeb.app/".format(FQDN)
 
 
 
