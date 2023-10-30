@@ -59,7 +59,7 @@ async def start(client, message):
             InlineKeyboardButton('𝙾𝚄𝚁 𝙼𝙰𝙸𝙽 𝙲𝙷𝙰𝙽𝙽𝙴𝙻', url='https://t.me/Aklinksz')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await message.reply_sticker("CAACAgUAAxkBAAKo1WU-WGxchXFLMMTysX7RnG2b1rYoAAIHDQAC-1f4VS-yhVm6aK2DHgQ") 
+        m=await message.reply_sticker("CAACAgUAAxkBAAKri2U_paRXzpTh-RP2XL-LdmjhHo6WAAIVCgACEsL5VXkHR0AgXAYGHgQ") 
         await asyncio.sleep(1)
         await m.delete()
         await message.reply_photo(
