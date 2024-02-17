@@ -1,6 +1,6 @@
 import logging
 from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait, UserIsBlocked, PeerIdInvalid
-from info import AUTH_CHANNEL, LONG_IMDB_DESCRIPTION, MAX_LIST_ELM, SHORTLINK_URL, SHORTLINK_API, IS_SHORTLINK, LOG_CHANNEL, TUTORIAL, GRP_LNK, CHNL_LNK, CUSTOM_FILE_CAPTION
+from info import AUTH_CHANNEL, LONG_IMDB_DESCRIPTION, MAX_LIST_ELM, SHORTLINK_URL, SHORTLINK_API, IS_SHORTLINK, LOG_CHANNEL, STREAM_URL, TUTORIAL, GRP_LNK, CHNL_LNK, CUSTOM_FILE_CAPTION, STREAM_LOG
 from imdb import Cinemagoer 
 import asyncio
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
@@ -16,12 +16,14 @@ from datetime import datetime, date
 import string
 from typing import List
 from database.users_chats_db import db
+from database.stream_db import get_stream_details, add_stream_details
 from bs4 import BeautifulSoup
 import requests
 import aiohttp
 from shortzy import Shortzy
 import http.client
 import json
+
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -741,3 +743,22 @@ async def get_cap(settings, remaining_seconds, files, query, total_results, sear
         for file in files:
             cap += f"<b>📁 <a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"
     return cap
+
+
+async def make_stream_link(bot, file):
+    is_exist = await get_stream_details(file.file_id)
+    if not is_exist:
+        chat_id = STREAM_LOG
+        try:
+            log_file = await bot.send_cached_media(chat_id=chat_id, file_id=file.file_id)
+        except FloodWait as e:
+            await asyncio.sleep(e.value)
+            log_file = await bot.send_cached_media(chat_id=chat_id, file_id=file.file_id)
+
+        await add_stream_details(file.file_id, STREAM_LOG, log_file.id)
+    else:
+        log_file = is_exist
+        
+    file_unique_id = file.file_unique_id
+    hash1 = file_unique_id[:6]
+    return f"{STREAM_URL}watch/{str(log_file.id)}/video.mp4?hash={hash1}"
