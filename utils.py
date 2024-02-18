@@ -862,15 +862,15 @@ async def make_stream_link(bot, file):
         is_exist = await get_stream_details(file.file_id, STREAM_LOG)
         if not is_exist:
             chat_id = STREAM_LOG
-            # try:
-            log_file = await bot.send_cached_media(
-                chat_id=chat_id, file_id=file.file_id
-            )
-            # except FloodWait as e:
-            #     await asyncio.sleep(e.value)
-            #     log_file = await bot.send_cached_media(
-            #         chat_id=chat_id, file_id=file.file_id
-            #     )
+            try:
+                log_file = await bot.send_cached_media(
+                    chat_id=chat_id, file_id=file.file_id
+                )
+            except FloodWait as e:
+                await asyncio.sleep(e.value)
+                log_file = await bot.send_cached_media(
+                    chat_id=chat_id, file_id=file.file_id
+                )
             message_id = log_file.id
             file_unique_id = getattr(log_file, log_file.media.value).file_unique_id
             await add_stream_details(
