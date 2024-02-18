@@ -12,8 +12,8 @@ mydb = myclient[DATABASE_NAME]
 mycol = mydb["stream_db"]
 
 
-async def add_stream_details(file_id, chat_id, message_id):
-    data = {"file_id": file_id, "chat_id": chat_id, "message_id": message_id}
+async def add_stream_details(file_id, chat_id, message_id, file_unique_id):
+    data = {"file_id": file_id, "chat_id": chat_id, "message_id": message_id, "file_unique_id": file_unique_id}
 
     try:
         mycol.insert_one(data)
