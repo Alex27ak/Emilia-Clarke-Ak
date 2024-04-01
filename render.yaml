@@ -1,11 +1,11 @@
 services:
   # A Docker web service
   - type: web
-    name: THALAPATHY-FILTER-BOT 
+    name: EMILIA CLARKE BOT
     env: python
     startCommand: python3 bot.py
     buildCommand: pip3 install -U -r requirements.txt
-    repo: https://github.com/1238muj/THALAPATHY-FILTER-BOT.git # optional
+    repo: https://github.com/Alex27ak/Emilia-Clarke-Ak # optional
     region: oregon # optional (defaults to oregon)
     plan: free # optional (defaults to starter)
     branch: main # optional (defaults to master)
