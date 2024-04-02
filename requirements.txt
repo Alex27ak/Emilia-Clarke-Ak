@@ -11,6 +11,7 @@ pyrogram>=2.0.106
  datetime 
  pytz 
  aiohttp
+ motor
 
 #---master---# 
  #Telethroid==0.0.10 
