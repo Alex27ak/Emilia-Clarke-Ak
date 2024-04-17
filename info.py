@@ -50,7 +50,7 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
 PM_SEARCH = is_enabled('PM_SEARCH', True)
-VERIFY = bool(environ.get('VERIFY', True))
+VERIFY = bool(environ.get('VERIFY', False))
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'api.shareus.io')
 SHORTLINK_API = environ.get('SHORTLINK_API', 'lQnEXrM7BtSuJqy6xraVg259Zbo2')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
@@ -63,7 +63,7 @@ CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/Aklinksz')
 TUTORIAL = environ.get('TUTORIAL', 'https://t.me/aklinksz_Backup')
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
 MSG_ALRT = environ.get('MSG_ALRT', 'Hello Darlings...❤️')
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001614975178'))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001617815028'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Aklinksz_Support_bot')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
@@ -100,8 +100,8 @@ else:
     ON_HEROKU = False
 BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
 FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
-URL = "https://sunnyleonebot-massalex306.koyeb.app/".format(FQDN) if ON_HEROKU or NO_PORT else \
-    "https://sunnyleonebot-massalex306.koyeb.app/".format(FQDN, PORT)
+URL = "https://parental-dorene-alexpandian1206.koyeb.app/".format(FQDN) if ON_HEROKU or NO_PORT else \
+    "https://parental-dorene-alexpandian1206.koyeb.app/".format(FQDN, PORT)
 SLEEP_THRESHOLD = int(environ.get('SLEEP_THRESHOLD', '60'))
 WORKERS = int(environ.get('WORKERS', '4'))
 SESSION_NAME = str(environ.get('SESSION_NAME', 'LazyBot'))
@@ -116,9 +116,9 @@ else:
     ON_HEROKU = False
 HAS_SSL=bool(getenv('HAS_SSL', True))
 if HAS_SSL:
-    URL = "https://sunnyleonebot-massalex306.koyeb.app/".format(FQDN)
+    URL = "https://parental-dorene-alexpandian1206.koyeb.app/".format(FQDN)
 else:
-    URL = "https://sunnyleonebot-massalex306.koyeb.app/".format(FQDN)
+    URL = "https://parental-dorene-alexpandian1206.koyeb.app/".format(FQDN)
 
 
 
