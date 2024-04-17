@@ -87,7 +87,7 @@ async def pm_text(bot, message):
                     ]
                 ]
                 await message.reply_text(
-                    "You are not subscribed to the authentication channel. Please join the channel to access this service.",
+                    "ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴀᴄᴄᴇss ᴛʜɪs ʙᴏᴛ 😉, sᴇᴀʀᴄʜ ᴀɢᴀɪɴ ᴛᴏ ɢᴇᴛ ᴍᴏᴠɪᴇs ᴏʀ ᴄʟɪᴄᴋ ᴛʀʏ ᴀɢᴀɪɴ ʙᴜᴛᴛᴏɴ 🤩",
                     reply_markup=InlineKeyboardMarkup(btn)
                 )
                 return
