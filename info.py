@@ -1,8 +1,7 @@
+
 import re
 from os import environ,getenv
 from Script import script 
-from dotenv import load_dotenv
-load_dotenv()
 
 id_pattern = re.compile(r'^.\d+$')
 def is_enabled(value, default):
@@ -23,9 +22,9 @@ BOT_TOKEN = environ.get('BOT_TOKEN', "")
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
-PICS = (environ.get('PICS', 'https://telegra.ph/file/db7600fa0deef5d595c0f.jpg')).split() #SAMPLE PIC
+PICS = (environ.get('PICS', 'https://telegra.ph/file/b6181a56ff0221be879ad.jpg')).split() #SAMPLE PIC
 NOR_IMG = environ.get("NOR_IMG", "https://te.legra.ph/file/a27dc8fe434e6b846b0f8.jpg")
-MELCOW_VID = environ.get("MELCOW_VID", "https://telegra.ph/file/73a3842d2477404570f15.mp4")
+MELCOW_VID = environ.get("MELCOW_VID", "https://telegra.ph/file/37a6a275d8ba729fe855f.mp4")
 SPELL_IMG = environ.get("SPELL_IMG", "https://te.legra.ph/file/15c1ad448dfe472a5cbb8.jpg")
 
 # Admins, Channels & Users
@@ -45,14 +44,15 @@ SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False))
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Alex1206:Alex1206@cluster0.omsn22o.mongodb.net/?retryWrites=true&w=majority")
 DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
-VERIFY = bool(environ.get('VERIFY', False))
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'tnshort.net')
-SHORTLINK_API = environ.get('SHORTLINK_API', 'a59e12d0770f67cf30245637bb869497a9680c85')
+PM_SEARCH = is_enabled('PM_SEARCH', True)
+VERIFY = bool(environ.get('VERIFY', True))
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'api.shareus.io')
+SHORTLINK_API = environ.get('SHORTLINK_API', 'lQnEXrM7BtSuJqy6xraVg259Zbo2')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "5")
@@ -63,7 +63,7 @@ CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/Aklinksz')
 TUTORIAL = environ.get('TUTORIAL', 'https://t.me/aklinksz_Backup')
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
 MSG_ALRT = environ.get('MSG_ALRT', 'Hello Darlings...❤️')
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001617815028'))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001614975178'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Aklinksz_Support_bot')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
@@ -80,9 +80,8 @@ INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
 FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '')).split()]
 MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "True")), True)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
-PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "False")), True)
-STREAM_LOG = int(environ.get('STREAM_LOG', '-1001627812746'))
-STREAM_URL = environ.get('STREAM_URL', 'https://t.me/Aklinksz')
+PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "False")), False)
+
 LANGUAGES = ["malayalam", "mal", "tamil", "tam" ,"english", "eng", "hindi", "hin", "telugu", "tel", "kannada", "kan"]
 
 SEASONS = ["season 1" , "season 2" , "season 3" , "season 4", "season 5" , "season 6" , "season 7" , "season 8" , "season 9" , "season 10"]
@@ -99,8 +98,8 @@ else:
     ON_HEROKU = False
 BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
 FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
-URL = "https://parental-dorene-alexpandian1206.koyeb.app/".format(FQDN) if ON_HEROKU or NO_PORT else \
-    "https://parental-dorene-alexpandian1206.koyeb.app/".format(FQDN, PORT)
+URL = "https://sunnyleonebot-massalex306.koyeb.app/".format(FQDN) if ON_HEROKU or NO_PORT else \
+    "https://sunnyleonebot-massalex306.koyeb.app/".format(FQDN, PORT)
 SLEEP_THRESHOLD = int(environ.get('SLEEP_THRESHOLD', '60'))
 WORKERS = int(environ.get('WORKERS', '4'))
 SESSION_NAME = str(environ.get('SESSION_NAME', 'LazyBot'))
@@ -113,11 +112,11 @@ if 'DYNO' in environ:
 
 else:
     ON_HEROKU = False
-HAS_SSL=bool(getenv('HAS_SSL',True))
+HAS_SSL=bool(getenv('HAS_SSL', True))
 if HAS_SSL:
-    URL = "https://parental-dorene-alexpandian1206.koyeb.app/".format(FQDN)
+    URL = "https://sunnyleonebot-massalex306.koyeb.app/".format(FQDN)
 else:
-    URL = "https://parental-dorene-alexpandian1206.koyeb.app/".format(FQDN)
+    URL = "https://sunnyleonebot-massalex306.koyeb.app/".format(FQDN)
 
 
 
